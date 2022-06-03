@@ -1,0 +1,1 @@
+// Reaction schema as a subdocument of Thought
