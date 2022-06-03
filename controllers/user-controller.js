@@ -1,7 +1,3 @@
-
-createFriend,
-deleteFriend
-
 const { User } = require("../models");
 
 // userController object
@@ -63,4 +59,6 @@ const userController = {
     }
 };
 
+// NEED TO ADD ROUTES FOR POST: ADD A NEW FRIEND TO USER'S FRIEND LIST AND DELETE: REMOVE A FRIEND FROM A USER'S FRIEND LIST
+//  createFriend,   deleteFriend
 module.exports = userController;
