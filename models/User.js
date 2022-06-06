@@ -13,7 +13,7 @@ const UserSchema = new Schema({
         required: true,
         unique: true,
         // Regex to valid email
-        match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/]
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]
     },
     friends: [
         {
@@ -31,8 +31,7 @@ const UserSchema = new Schema({
 },
     {
         toJSON: {
-            virtuals: true,
-            // getters: true
+            virtuals: true
         },
         id: false
     }
