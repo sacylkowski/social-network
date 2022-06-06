@@ -64,7 +64,7 @@ const userController = {
     },
     createFriend({ params }, res) {
         User.findOneAndUpdate(
-            { _id: params.userId },
+            { _id: params.id },
             { $push: { friends: params.friendId } },
             { new: true }
         )
@@ -82,10 +82,10 @@ const userController = {
             .catch(err => res.status(400).json(err));
     },
     deleteFriend({ params }, res) {
-        User.findByIdAndUpdate(
-            { _id: params.userId },
+        User.findOneAndUpdate(
+            { _id: params.id },
             { $pull: { friends: { friendId: params.friendId } } },
-            { new: true }
+            { new: true, runValidators: true }
         )
             .populate({
                 path: "friends",
